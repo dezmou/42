@@ -1,3 +1,9 @@
+/*
+DRAW sert a afficher des truc dans un fichier html par ce que c'est 
+marrant et fuck you, tu peux meme ecrire en couleur avec dr_cline; 
+*/
+
+
 #include "draw.h"
 
 t_draw 		*dr_make(char *filename)

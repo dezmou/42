@@ -10,6 +10,6 @@ int main(void)
 	testint(ft_atoi(VALUE));
 	tests("");
 	testint(atoi(VALUE));
-	CLINE("ehhee","red");
+	CLINE("ehhee","blue");
 	return(0);
 }
