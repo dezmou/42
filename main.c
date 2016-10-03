@@ -1,15 +1,20 @@
 #include "func.h"
-#define VALUE "600"
-
+#define VALUE '5'
 
 
 
 int main(void)
 {
-	t_draw *dr = dr_make("file.html");
-	testint(ft_atoi(VALUE));
-	tests("");
-	testint(atoi(VALUE));
-	CLINE("ehhee","blue");
+	char joie[] = "55555544444444eeeeeeeeegggggggggg)))))))))))";
+	int i;
+	MKDRAW
+	LINE("bonjour")
+	MKGRAPH
+	while (joie[i])
+	{
+		ADDGRAPH((int)joie[i]);
+		i++;
+	}
+	ENDGRAPH
 	return(0);
 }

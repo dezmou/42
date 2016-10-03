@@ -4,6 +4,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+
+int 			ft_isprint(int nbr);
+int 			ft_isascii(int nbr);
+int 			ft_isdigit(int nbr);
+int 			ft_isalpha(int nbr);
+int 			ft_isalnum(int nbr);
 int 			ft_atoi(const char *str);
 int 			ft_strlen(const char *s);
 char 			*ft_strdup(const char *s);

@@ -8,6 +8,7 @@
 #include <fcntl.h>
 #include "libft.h"
 #include "draw.h"
+#include <ctype.h>
 void 			wstr(char *str);
 void 			wchar(char c);
 void			w_putnbr(int nb);

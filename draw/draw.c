@@ -42,6 +42,53 @@ void 		dr_cline(t_draw *draw,char *str,char *color)
 	write(fd,color,ft_strlen(color));
 	write(fd,";'>",3);
 	write(fd,str,ft_strlen(str));
+	write(fd,"</span>",7);
 	write(fd,"<br/>\n",6);
+	close(fd);
+}
+
+void 		dr_line_int(t_draw *draw,int nbr)
+{
+	int fd;
+	fd = open(draw->filename,O_APPEND | O_RDWR);
+	w_putnbr(nbr);
+	write(fd,"<br/>\n",6);
+	close(fd);
+}
+
+
+void 		dr_mkgraph(t_draw *draw)
+{
+	int fd;
+	
+	draw->graph_x = 0;
+	fd = open(draw->filename,O_APPEND | O_RDWR);
+	write(fd,"<svg width=5000 height=500>\n",28);
+	close(fd);
+}
+void 		dr_graph(t_draw *draw ,int value)
+{
+	int fd;
+	
+	int y = (130-value);
+	fd = open(draw->filename,O_APPEND | O_RDWR);
+
+	write(fd,"<rect x=",8);
+	w_putnbr(draw->graph_x);
+	write(fd," y=",3);
+	w_putnbr(y);
+	write(fd," width=10 height=",17);
+	w_putnbr(value);
+	write(fd," style=fill:blue />\n",20);
+	draw->graph_x += 11;
+	close(fd);
+
+}
+void 		dr_endgraph(t_draw *draw)
+{
+	int fd;
+	fd = open(draw->filename,O_APPEND | O_RDWR);
+	write(fd,"</svg>",6);
+
 	close(fd);
 }
