@@ -1,20 +1,12 @@
 #include "func.h"
 #define VALUE '5'
 
-
+//temps log 344
 
 int main(void)
 {
-	char joie[] = "55555544444444eeeeeeeeegggggggggg)))))))))))";
-	int i;
 	MKDRAW
-	LINE("bonjour")
-	MKGRAPH
-	while (joie[i])
-	{
-		ADDGRAPH((int)joie[i]);
-		i++;
-	}
-	ENDGRAPH
+	printf("bonjour\n");
+	CLINE("bijoul","red")
 	return(0);
 }
