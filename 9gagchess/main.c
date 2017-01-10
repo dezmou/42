@@ -11,6 +11,7 @@ void empty(E)
 			CA.bandit = 0;
 		}
 	}
+
 	CASE[3][1].cover = 1;
 	CASE[3][4].cover = 1;
 	CASE[4][1].cover = 1;
@@ -57,6 +58,7 @@ t_env *init_env(void)
 	e = (t_env*)malloc(sizeof(t_env));
 	e->nbrtest = 0;
 	e->ok = 0;
+	e->fp = fopen("final.txt", "a");
 	init_cases(e);
 	return (e);
 }
@@ -69,43 +71,48 @@ void printit(E)
 		{
 			if (CA.bandit != 0)
 			{
+				fprintf(e->fp, " # ");
 				printf(" # ");
 				continue;
 			}
 			if (CA.cover != 0)
 			{
-
+				fprintf(e->fp, " %d ", CA.cover);
 				printf(" %d ", CA.cover);
 				continue;
 			}
 			if (CA.field != 0 )
 			{
+				fprintf(e->fp, " * ");
 				printf(" * ");
 				continue;
 			}
 			else
 			{
+				fprintf(e->fp, " . ");
 				printf(" . ");
 			}
 		}
 		printf("\n");
+		fprintf(e->fp, "\n");
 	}
+	fprintf(e->fp, "+\n");
 }
 
 int place(E, int x, int y, int nbr)
 {
 	if (nbr == 0)
-		return (place_piece_3(e, x, y));
-	if (nbr == 4)
+		return (place_piece_1(e, x, y));
+	if (nbr == 1)
 		return (place_piece_2(e, x, y));
-	if (nbr == 5)
-		return (place_piece_5(e, x, y));
+	if (nbr == 2)
+		return (place_piece_3(e, x, y));
 	if (nbr == 3)
 		return (place_piece_4(e, x, y));
-	if (nbr == 2)
+	if (nbr == 4)
+		return (place_piece_5(e, x, y));
+	if (nbr == 5)
 		return (place_piece_6(e, x, y));
-	if (nbr == 1)
-		return (place_piece_1(e, x, y));
 	return (0);
 
 }
@@ -149,14 +156,12 @@ int 	place_all(E)
 	{
 		//PT
 		//GT
-		
 		if (isfull(e))
 		{
 			printf("FINI! with %ld tests \n", e->nbrtest);
 			printit(e);
 			exit(0);
 		}
-		
 		empty(e);
 		NP--;
 		remap(e);
@@ -182,6 +187,7 @@ int 	place_all(E)
 					if (e->nbrtest % 1000 == 0)
 					{
 						printf("nbr test: %ld", e->nbrtest);
+
 						PT
 					}
 					//PT
@@ -200,6 +206,6 @@ int main(void)
 	//printit(e);
 	place_all(e);
 
-
+	fclose(e->fp);
 	return (0);
 }
