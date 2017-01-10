@@ -149,14 +149,14 @@ int 	place_all(E)
 	{
 		//PT
 		//GT
-		/*
+		
 		if (isfull(e))
 		{
 			printf("FINI! with %ld tests \n", e->nbrtest);
 			printit(e);
 			exit(0);
 		}
-		*/
+		
 		empty(e);
 		NP--;
 		remap(e);
