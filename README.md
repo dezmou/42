@@ -1,3 +1,5 @@
-School projet for the 42 school (Paris) by momartin
+School projet for the 42 school (Paris) by Modez MARTIN
 
-incredibledez@gmail.com
+42 login: momartin 
+
+email : incredibledez@gmail.com
