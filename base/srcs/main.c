@@ -16,10 +16,9 @@ int main(void)
 {
 	t_env *e;
 
-	e = init_env(e);
+	e = init_env();
 	/*START*/
-
-
+	ft_putstr("####### Project: ###projet ####### \n");
 
 	/*END*/
 	destroy_env(e);

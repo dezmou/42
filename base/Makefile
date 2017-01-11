@@ -14,8 +14,14 @@ NAME = ###projet
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I ./srcs -I ./srcs/libft
+
+
+
 SRCS = main.c init.c
-LIBS = ./srcs/libft -lft
+
+
+
+LIBS = -L ./srcs/libft -lft
 
 OBJ = $(addprefix ./srcs/, $(SRCS:.c=.o))
 

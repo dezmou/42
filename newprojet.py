@@ -1,3 +1,5 @@
+#PYTHON script for creating new C project with basic
+
 import errno
 import shutil
 import sys
@@ -8,6 +10,7 @@ def assign(src,name):
 	text = fil.read()
 	fil.close()
 	text = text.replace("###projet", name)
+	text = text.replace("###PROJET", name)
 	if "projet.h" in src:
 		src = src.replace("projet.h", name+".h")
 		fil = open(src, "w")
