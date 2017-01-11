@@ -70,11 +70,11 @@ for map in fil.read().split("+\n"):
 	pygame.display.flip()
 	i += 1;
 	print i
-	if i != 230:
+	if i != 2377:
 		vide()
 	if (temps < 0):
-		temps = 0.01
-	#sleep(temps)
+		temps = 0.001
+	sleep(temps)
 	raw_input("next")
 	temps -= 0.0005
 

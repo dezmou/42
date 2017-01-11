@@ -32,6 +32,7 @@ typedef struct 	s_case
 
 typedef struct 	s_en
 {
+	int 		zouze;
 	FILE 		*fp;
 	int 		ok;
 	long 		nbrtest;

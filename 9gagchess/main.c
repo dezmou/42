@@ -58,6 +58,7 @@ t_env *init_env(void)
 	e = (t_env*)malloc(sizeof(t_env));
 	e->nbrtest = 0;
 	e->ok = 0;
+	e->zouze = 0;
 	e->fp = fopen("final.txt", "a");
 	init_cases(e);
 	return (e);
@@ -71,32 +72,32 @@ void printit(E)
 		{
 			if (CA.bandit != 0)
 			{
-				fprintf(e->fp, " # ");
+				//fprintf(e->fp, " # ");
 				printf(" # ");
 				continue;
 			}
 			if (CA.cover != 0)
 			{
-				fprintf(e->fp, " %d ", CA.cover);
+				//fprintf(e->fp, " %d ", CA.cover);
 				printf(" %d ", CA.cover);
 				continue;
 			}
 			if (CA.field != 0 )
 			{
-				fprintf(e->fp, " * ");
+				//fprintf(e->fp, " * ");
 				printf(" * ");
 				continue;
 			}
 			else
 			{
-				fprintf(e->fp, " . ");
+				//fprintf(e->fp, " . ");
 				printf(" . ");
 			}
 		}
 		printf("\n");
-		fprintf(e->fp, "\n");
+		//fprintf(e->fp, "\n");
 	}
-	fprintf(e->fp, "+\n");
+	//fprintf(e->fp, "+\n");
 }
 
 int place(E, int x, int y, int nbr)
@@ -158,9 +159,14 @@ int 	place_all(E)
 		//GT
 		if (isfull(e))
 		{
+			if (e->zouze == 50)
+			{
 			printf("FINI! with %ld tests \n", e->nbrtest);
 			printit(e);
 			exit(0);
+			}
+			printit(e);
+			e->zouze += 1;
 		}
 		empty(e);
 		NP--;
@@ -186,9 +192,9 @@ int 	place_all(E)
 					NP++;
 					if (e->nbrtest % 1000 == 0)
 					{
-						printf("nbr test: %ld", e->nbrtest);
+						//printf("nbr test: %ld", e->nbrtest);
 
-						PT
+						//PT
 					}
 					//PT
 					//GT
@@ -204,6 +210,7 @@ int main(void)
 	t_env *e;
 	e = init_env();
 	//printit(e);
+
 	place_all(e);
 
 	fclose(e->fp);
