@@ -15,6 +15,7 @@ pion3 = pygame.image.load("pion3.gif").convert()
 pion4 = pygame.image.load("pion4.gif").convert()
 pion5 = pygame.image.load("pion5.gif").convert()
 view = pygame.image.load("view.gif").convert()
+notview = pygame.image.load("notview.gif").convert()
 
 pygame.display.flip()
 continuer = 1
@@ -25,7 +26,6 @@ def addpion(nbr,x,y):
 		fenetre.blit(pion1,(x*60+4,y*60+1))
 	if nbr == 2:
 		fenetre.blit(pion2,(x*60+4,y*60+1))
-
 	if nbr == 3:
 		fenetre.blit(pion3,(x*60+4,y*60+1))
 	if nbr == 4:
@@ -36,6 +36,8 @@ def addpion(nbr,x,y):
 		fenetre.blit(pion2,(x*60+4,y*60+1))
 	if nbr == 7:
 		fenetre.blit(view,(x*60,y*60))
+	if nbr == 8:
+			fenetre.blit(notview,(x*60,y*60))
 
 def vide():
 	fenetre.blit(fond, (0,0))
@@ -61,6 +63,8 @@ for map in fil.read().split("+\n"):
 				addpion(int(char),x,y)
 			if char == "*":
 				addpion(7, x, y)
+			if char == ".":
+				addpion(8, x, y)
 			x += 1
 		y += 1
 	pygame.display.flip()
@@ -70,7 +74,8 @@ for map in fil.read().split("+\n"):
 		vide()
 	if (temps < 0):
 		temps = 0.01
-	sleep(temps)
+	#sleep(temps)
+	raw_input("next")
 	temps -= 0.0005
 
 while True:
