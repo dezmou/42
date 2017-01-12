@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-SRC = ft_printf.c handle.c init.c
+SRC = ft_printf.c handle.c init.c show.c flags.c
 
 OBJ = ./libft/*.o ./*.o
 
@@ -17,3 +17,8 @@ fclean: clean
 	/bin/rm -fv ./$(NAME)
 
 re: fclean all
+
+test:
+	#make re -C ./libft
+	gcc  $(SRC) -L ./libft -lft
+	./a.out

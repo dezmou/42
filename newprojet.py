@@ -33,7 +33,7 @@ def copy(src, dest):
 try:
 	nom = sys.argv[1]
 except:
-	print "usage: neofile"
+	print "usage: NameOfProject"
 
 copy("base", nom)
 assign(nom+"/srcs/projet.h",nom)
