@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ###projet
+NAME = #projet#
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I ./srcs -I ./srcs/libft

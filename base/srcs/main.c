@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "###projet.h"
+#include "#projet#.h"
 
 int main(void)
 {
@@ -18,7 +18,7 @@ int main(void)
 
 	e = init_env();
 	/*START*/
-	ft_putstr("####### Project: ###projet ####### \n");
+	ft_putstr("####### C Project: #projet# ####### \n");
 
 	/*END*/
 	destroy_env(e);

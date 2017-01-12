@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ###PROJET_H
-# define ###PROJET_H
+#ifndef #PROJET#_H
+# define #PROJET#_H
 
 #include <unistd.h>
 #include <stdio.h>
