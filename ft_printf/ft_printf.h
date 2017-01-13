@@ -15,7 +15,7 @@
 # define NBRR e->nbrread
 # define PSTR(x) ft_putstr(x)
 
-# define TEST "hello %s", "bajoir"
+# define TEST "hello %015s", "bajoir"
 
 //sSpdDioOuUxXcC
 //hh h l ll j z

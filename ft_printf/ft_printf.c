@@ -46,7 +46,7 @@ void testit()
 int main(void)
 {
 
-	//testit();
+	testit();
 	//ft_printf(TEST);
 	//printf("%s", (wchar_t*)("bonjour"));
 	return (0);
