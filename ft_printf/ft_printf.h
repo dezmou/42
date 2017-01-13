@@ -14,8 +14,8 @@
 # define NBRC e->char_rendu
 # define NBRR e->nbrread
 # define PSTR(x) ft_putstr(x)
-
-# define TEST "hello %015s", "bajoir"
+# define NEXT_ARG va_arg(ARGS, int)
+# define TEST "hello %d", 50
 
 //sSpdDioOuUxXcC
 //hh h l ll j z
@@ -28,7 +28,7 @@ typedef struct	s_env
 	int 		char_rendu;
 	int 		list_rendu;
 	char 		u_width[256];
-
+	void 		*tab_spec[256];
 /*#####ALL INFOS ABOUT %VAR ######*/
 
 	char 		*finalstr;
@@ -58,7 +58,7 @@ typedef struct	s_env
 
 }				t_env;
 
-t_env init_env(void);
+void init_env(E);
 void destroy_env(E);
 
 
@@ -75,5 +75,6 @@ void handle_length(E);
 void handle_specifier(E);
 
 void apply(E);
+void apply_int(E);
 
 #endif

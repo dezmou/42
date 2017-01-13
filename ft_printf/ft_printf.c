@@ -18,7 +18,7 @@ int ft_printf(const char *restrict format, ...)
 {
 	t_env e;
 
-	e = init_env();
+	init_env(&e);
 	e.str = ft_strdup(format);
 	va_start(e.args, format);
 	while (parse_str(&e));

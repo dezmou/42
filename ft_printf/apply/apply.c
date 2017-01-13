@@ -1,17 +1,18 @@
 #include "../ft_printf.h"
 
-void apply_flag_space(E)
+
+void apply_int(E)
 {
-	if (e->fl_space)
-		add_char(e,' ');
+
 }
 
+static void assign(E, void (*func)(t_env*))
+{
+	func(e);
+}
 
 void apply(E)
 {
-	if (e->specifier == 's')
-		e->finalstr = va_arg(ARGS, char*);
-	apply_flag_space(e);
-	add_str(e, e->finalstr);
+	assign(e,e->tab_spec[e->specifier]);
 
 }
