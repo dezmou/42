@@ -1,0 +1,16 @@
+Bonjour a tous.
+
+Qui n'a jamais souffert a la creation d'un projet ou juste d'un test de devoir
+creer a chaque fois le main , e .h , le makefile , les t_env et autre exotismes.
+
+Ce petit script Python vous permet de creer un projet en une commande shell.
+
+Comment l'utiliser ?
+Telecharger ce script https://github.com/dezmou/42/blob/master/newproject.py
+
+creezun fichier base
+Dans ce dossier base vous y metterez tout ce que vous aimeriez avoir dans un nouveau projet.
+A la place de tout les endroits ou figurera le nom du projet, vous mettez #projet# .
+Le script va copier le dossier "base" et le coller en tant que "projet" et remplacer par
+le nom du projet tout les #projet# qu'il trouvera dans les fichier et les nom des fichiers.
+Vous allez donc gagner un temps precieux !

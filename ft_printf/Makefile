@@ -1,5 +1,14 @@
 NAME = libftprintf.a
-SRC = ft_printf.c handle.c init.c show.c flags.c
+SRC = ft_printf.c\
+		init.c \
+		show.c \
+		handle/flags.c \
+		handle/width.c \
+		handle/precision.c \
+		handle/length.c \
+		handle/specifier.c \
+		handle/handle.c \
+		apply/apply.c \
 
 OBJ = ./libft/*.o ./*.o
 
@@ -20,5 +29,5 @@ re: fclean all
 
 test:
 	#make re -C ./libft
-	gcc  $(SRC) -L ./libft -lft
+	gcc $(SRC) -L ./libft -l ft
 	./a.out

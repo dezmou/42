@@ -16,40 +16,38 @@ int parse_str(E)
 
 int ft_printf(const char *restrict format, ...)
 {
-	t_env *e;
+	t_env e;
 
 	e = init_env();
-	STR = ft_strdup(format);
-	va_start(ARGS, format);
-	while (parse_str(e));
-	va_end(ARGS);
-	destroy_env(e);
-	return (NBRR);
+	e.str = ft_strdup(format);
+	va_start(e.args, format);
+	while (parse_str(&e));
+	va_end(e.args);
+	destroy_env(&e);
+	return (e.nbrread);
 }
 
-void testit(E)
+void testit()
 {
-	int reel;
-	int ft;
+	int reel ;
+	int ft ;
 
 	ft_putstr("\n\n########################\n\n");
-	ft_putstr("ft_printf  : ");
+	ft_putstr("ft_printf  :-->");
 	ft = ft_printf(TEST);
 	ft_putstr("<--");
 	printf("\n");
-	printf("Reel printf: ");
+	printf("Reel printf:-->");
 	reel = printf(TEST);
 	printf("<--");
 	printf("\n\n reel : %d \n ft   : %d\n\n", reel, ft);
-
 }
 
 int main(void)
 {
-	t_env *e;
 
-	e = init_env();
-	testit(e);
-
+	//testit();
+	//ft_printf(TEST);
+	//printf("%s", (wchar_t*)("bonjour"));
 	return (0);
 }
