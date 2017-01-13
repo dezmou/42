@@ -11,9 +11,13 @@
 # **************************************************************************** #
 
 #		Simple python script for creating new project.
-#		It juste copy all the file in the "base" folder and replace all #projet#
-#		string in the file content and filenames.
 
+#		It juste copy all the 
+#		file in the "base" folder 
+#		and replace all #projet#
+#		string in the file content 
+#		and filenames.
+#
 #		By momartin 	incredibledez@gmail.com
 
 
