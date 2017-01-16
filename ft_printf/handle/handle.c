@@ -12,6 +12,7 @@ void reset_spec(E)
 	e->precision = -1;
 	e->length = 0;
 	e->specifier = 0;
+	e->bigx = 0;
 }
 
 void handle_percent(E)

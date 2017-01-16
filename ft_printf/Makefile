@@ -9,6 +9,15 @@ SRC = ft_printf.c\
 		handle/specifier.c \
 		handle/handle.c \
 		apply/apply.c \
+		apply/int.c \
+		apply/str.c \
+		apply/ptr.c \
+		apply/long.c \
+		apply/char.c \
+		apply/unsigned.c \
+		apply/hexa.c \
+		apply/octal.c \
+		apply/float.c \
 
 OBJ = ./libft/*.o ./*.o
 
@@ -29,5 +38,5 @@ re: fclean all
 
 test:
 	#make re -C ./libft
-	gcc $(SRC) -L ./libft -l ft
-	./a.out
+	@gcc $(SRC) -L ./libft -l ft
+	@./a.out

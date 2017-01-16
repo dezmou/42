@@ -15,7 +15,7 @@
 # define NBRC e->char_rendu
 # define NBRR e->nbrread
 # define PSTR(x) ft_putstr(x)
-# define TEST "rgfeog"
+# define TEST "hello %f ", 654.45
 
 //s S p d D i o O u U x X c C
 //hh h l ll j z
@@ -77,10 +77,6 @@ void apply_hex_big(E);
 void apply_hex_short(E);
 void apply_octal(E);
 void apply_float(E);
-
-void apply_flags(E);
-void apply_hash(E);
-
 #endif
 
 

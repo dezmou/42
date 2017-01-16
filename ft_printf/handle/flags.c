@@ -1,5 +1,18 @@
 #include "../ft_printf.h"
 
+void apply_hash(E)
+{
+	if (e->fl_hash == 1)
+	{
+
+	}
+}
+
+void apply_flags(E)
+{
+
+}
+
 static void handle_flag(E,char c)
 {
 	e->is_flagged = 1;

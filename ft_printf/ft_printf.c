@@ -31,8 +31,8 @@ void testit()
 {
 	int reel ;
 	int ft ;
-
-	ft_putstr("\n\n########################\n\n");
+	int pointer;
+	ft_putstr("\n\n#############################################################\n\n");
 	ft_putstr("ft_printf  :-->");
 	ft = ft_printf(TEST);
 	ft_putstr("<--");
@@ -40,14 +40,14 @@ void testit()
 	printf("Reel printf:-->");
 	reel = printf(TEST);
 	printf("<--");
-	printf("\n\n reel : %d \n ft   : %d\n\n", reel, ft);
+	printf("\n\nprintf return   : %d \nft_printf return: %d\n\n", reel, ft);
 }
 
 int main(void)
 {
-
+	//int pointer;
 	testit();
-	//ft_printf(TEST);
+	//printf(TEST);
 	//printf("%s", (wchar_t*)("bonjour"));
 	return (0);
 }
