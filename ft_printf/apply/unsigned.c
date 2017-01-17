@@ -2,11 +2,16 @@
 
 void apply_unsigned(E)
 {
-	char *str;
 	unsigned int value;
 
 	value = va_arg(ARGS,unsigned int);
-	str = ft_itoa(value);
-	add_str(e,str);
-	free(str);
+	if (e->fl_pos != 0)
+		e->fl_pos = 0;
+	if (e->fl_pos != 0 || e->fl_space != 0)
+		e->fl_space = 0;
+	if (e->fl_neg != 0)
+		e->fl_zero = ' ';
+	TMPS = ft_itoa(value);
+	apply_width_dec(e);
+	add_str(e,TMPS);
 }

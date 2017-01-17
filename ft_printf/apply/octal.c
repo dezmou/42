@@ -3,10 +3,10 @@
 void apply_octal(E)
 {
 	unsigned int value;
-	char *str;
 
 	value = va_arg(ARGS,unsigned int);
-	str = ft_itoa_base(value,8);
-	add_str(e,str);
-	free(str);
+	if (value == 0)
+		e->fl_hash = 0;
+	TMPS = ft_itoa_base(value,8);
+	apply_hex_final(e);
 }

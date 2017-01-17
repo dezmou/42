@@ -1,8 +1,18 @@
 #include "../ft_printf.h"
 
+
+void get_more_width(E)
+{
+	int more;
+
+	more = e->width - ft_strlen(TMPS);
+	e->finalwidth = more;
+}
+
 void handle_width(E)
 {
 	int i;
+	char u_width[64];
 
 	i = 0;
 	if (CHAR == '*')
@@ -11,13 +21,12 @@ void handle_width(E)
 		NBRC++;
 		return ;
 	}
-
 	while (ft_isdigit(CHAR))
 	{
-		e->u_width[i] = CHAR;
+		u_width[i] = CHAR;
 		NBRC++;
 		i++;
-		e->u_width[i] = '\0';
+		u_width[i] = '\0';
 	}
-	e->width = ft_atoi(e->u_width);
+	e->width = ft_atoi(u_width);
 }

@@ -15,7 +15,10 @@
 # define NBRC e->char_rendu
 # define NBRR e->nbrread
 # define PSTR(x) ft_putstr(x)
-# define TEST "rgfeog"
+# define TMPS e->tmpstr
+# define SPEC e->specifier
+
+# define TEST "%1.10d", 42949
 
 //s S p d D i o O u U x X c C
 //hh h l ll j z
@@ -27,8 +30,8 @@ typedef struct	s_env
 	char 		*str;
 	int 		char_rendu;
 	int 		list_rendu;
-	char 		u_width[256];
 	void 		*tab_spec[256];
+	char 		*tmpstr;
 /*#####ALL INFOS ABOUT %VAR ######*/
 
 	char 		*finalstr;
@@ -42,11 +45,14 @@ typedef struct	s_env
 
 
 	int 		width;
+	int 		finalwidth;
 	int 		precision;
 
 	char 		length;
 	char 		specifier;
 
+
+	char 		dec_is_neg;
 
 }				t_env;
 
@@ -66,6 +72,8 @@ void handle_precision(E);
 void handle_length(E);
 void handle_specifier(E);
 
+void get_more_width(E);
+
 void apply(E);
 void apply_int(E);
 void apply_str(E);
@@ -77,9 +85,15 @@ void apply_hex_big(E);
 void apply_hex_short(E);
 void apply_octal(E);
 void apply_float(E);
+void apply_percent(E);
 
-void apply_flags(E);
-void apply_hash(E);
+void show_params(E);
+
+void apply_width(E);
+void apply_width_dec(E);
+void apply_hex_final(E);
+
+void apply_precision(E);
 
 #endif
 

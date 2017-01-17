@@ -26,7 +26,7 @@ int ft_printf(const char *restrict format, ...)
 	destroy_env(&e);
 	return (e.nbrread);
 }
-
+/*
 void testit()
 {
 	int reel ;
@@ -51,3 +51,5 @@ int main(void)
 	//printf("%s", (wchar_t*)("bonjour"));
 	return (0);
 }
+
+*/

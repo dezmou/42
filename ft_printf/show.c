@@ -11,6 +11,8 @@ void add_str(E,char *str)
 	int i;
 
 	i = -1;
-	while (str[++i] != '\0')
-		add_char(e,str[i]);
+	TMPS = str;
+	while (TMPS[++i] != '\0')
+		add_char(e,TMPS[i]);
+	free(TMPS);
 }

@@ -1,17 +1,5 @@
 #include "../ft_printf.h"
 
-void apply_hash(E)
-{
-	if (e->fl_hash == 1)
-	{
-
-	}
-}
-
-void apply_flags(E)
-{
-
-}
 
 static void handle_flag(E,char c)
 {
@@ -25,7 +13,7 @@ static void handle_flag(E,char c)
 	if (c == '#')
 		e->fl_hash = 1;
 	if (c == '0')
-		e->fl_zero = 1;
+		e->fl_zero = '0';
 	NBRC++;
 	handle_flags(e);
 }

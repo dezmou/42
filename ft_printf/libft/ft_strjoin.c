@@ -32,3 +32,15 @@ char	*ft_strjoin(char *s1, char const *s2)
 	}
 	return (NULL);
 }
+
+char 	*ft_str_join_free(char *str1, char *str2, char nbr)
+{
+	char * neo;
+
+	neo = ft_strjoin(str1, str2);
+	if (nbr == 1)
+		free(str1);
+	if (nbr == 2)
+		free(str2);
+	return (neo);
+}

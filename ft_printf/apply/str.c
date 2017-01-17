@@ -2,5 +2,7 @@
 
 void apply_str(E)
 {
-	add_str(e,(char*)va_arg(ARGS,char*));
+	TMPS = ft_strdup((char*)va_arg(ARGS,char*));
+	apply_width(e);
+	add_str(e,TMPS);
 }

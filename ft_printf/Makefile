@@ -18,6 +18,9 @@ SRC = ft_printf.c\
 		apply/hexa.c \
 		apply/octal.c \
 		apply/float.c \
+		apply/percent.c \
+		apply/apply_width.c \
+		apply/apply_precision.c \
 
 OBJ = ./libft/*.o ./*.o
 

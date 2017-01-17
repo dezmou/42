@@ -18,7 +18,7 @@ static void	init_tab(E)
 	//e->tab_spec['C'] = &apply_wchar; //equivalent lc
 	e->tab_spec['f'] = &apply_float;
 	//e->tab_spec['n'] = &apply_charswritten;
-
+	e->tab_spec['%'] = &apply_percent;
 }
 
 

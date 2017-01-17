@@ -17,6 +17,4 @@ void apply_ptr(E)
 	final = ft_strjoin("0x", str);
 	add_str(e,final);
 	free(str);
-	free(final);
-
 }

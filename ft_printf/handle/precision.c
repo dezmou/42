@@ -3,6 +3,7 @@
 void handle_precision(E)
 {
 	int i;
+	char u_width[64];
 
 	i = 0;
 	if (CHAR == '.')
@@ -13,12 +14,12 @@ void handle_precision(E)
 		else
 			while(ft_isdigit(CHAR))
 			{
-				e->u_width[i] = CHAR;
+				u_width[i] = CHAR;
 				NBRC++;
 				i++;
-				e->u_width[i] = '\0';
+				u_width[i] = '\0';
 			}
 		if (i)
-			e->precision = ft_atoi(e->u_width);
+			e->precision = ft_atoi(u_width);
 	}
 }
