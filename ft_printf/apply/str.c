@@ -2,7 +2,16 @@
 
 void apply_str(E)
 {
-	TMPS = ft_strdup((char*)va_arg(ARGS,char*));
+	char *str;
+
+	str = (char*)va_arg(ARGS,char*);
+	if (str == NULL)
+	{
+		TMPS = ft_strdup("(null)");
+	}
+	else
+		TMPS = ft_strdup(str);
+	apply_precision_str(e);
 	apply_width(e);
 	add_str(e,TMPS);
 }

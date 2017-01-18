@@ -1,6 +1,14 @@
 #include "../ft_printf.h"
 
 
+void get_more_prec(E)
+{
+	int more;
+
+	more = e->precision - ft_strlen(TMPS);
+	e->final_prec = more;
+}
+
 void get_more_width(E)
 {
 	int more;

@@ -105,5 +105,5 @@ t_matrix			*ft_cpy_matrix(t_matrix *m);
 char				*ft_itoa_base(uintmax_t number, int base);
 void				ft_strtolower(char *str);
 char				*ft_str_join_free(char *str1, char *str2, char nbr);
-
+char 				*ft_itoa_u(unsigned long n);
 #endif

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 unsigned int	ft_nbrlen(intmax_t n)
 {
@@ -38,6 +39,8 @@ char			*ft_itoa(intmax_t n)
 	intmax_t	nbr;
 	intmax_t	len;
 
+	if(n == LONG_MIN)
+		return ft_strdup("-9223372036854775808");
 	nbr = n;
 	len = ft_nbrlen(n);
 	if (!(s_out = ft_strnew(sizeof(char) * len)))

@@ -21,6 +21,8 @@ SRC = ft_printf.c\
 		apply/percent.c \
 		apply/apply_width.c \
 		apply/apply_precision.c \
+		apply/apply_invalid.c \
+		apply/unsigned_long.c \
 
 OBJ = ./libft/*.o ./*.o
 
@@ -41,5 +43,5 @@ re: fclean all
 
 test:
 	#make re -C ./libft
-	@gcc $(SRC) -L ./libft -l ft
+	@gcc  $(SRC) -L ./libft -l ft
 	@./a.out

@@ -7,6 +7,8 @@
 #include <stdarg.h>
 #include "libft/libft.h"
 #include <math.h>
+#include <string.h>
+#include <limits.h>
 
 # define E t_env *e
 # define ARGS e->args
@@ -18,7 +20,9 @@
 # define TMPS e->tmpstr
 # define SPEC e->specifier
 
-# define TEST "%1.10d", 42949
+# define TEST "%s %s %s", "this", "is", "a"
+
+# define VALID "dsDpDioOuUxXcCfn%"
 
 //s S p d D i o O u U x X c C
 //hh h l ll j z
@@ -47,10 +51,11 @@ typedef struct	s_env
 	int 		width;
 	int 		finalwidth;
 	int 		precision;
+	int 		final_prec;
 
 	char 		length;
 	char 		specifier;
-
+	long		dec_value;
 
 	char 		dec_is_neg;
 
@@ -73,6 +78,7 @@ void handle_length(E);
 void handle_specifier(E);
 
 void get_more_width(E);
+void get_more_prec(E);
 
 void apply(E);
 void apply_int(E);
@@ -86,15 +92,18 @@ void apply_hex_short(E);
 void apply_octal(E);
 void apply_float(E);
 void apply_percent(E);
+void apply_unsigned_long(E);
 
 void show_params(E);
 
 void apply_width(E);
 void apply_width_dec(E);
+void apply_precision(E);
+void apply_precision_str(E);
 void apply_hex_final(E);
 
-void apply_precision(E);
 
+void apply_invalid(E);
 #endif
 
 

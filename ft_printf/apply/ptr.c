@@ -3,18 +3,17 @@
 void apply_ptr(E)
 {
 	long value ;
-	char *str;
-	char *final;
 
 	value = (long)va_arg(ARGS, void*);
-	if (value == 0)
+	if (value == 0 || (void*)value == NULL)
 	{
-		add_str(e,"0x0");
+		TMPS = ft_strdup("0x0");
+		apply_width(e);
+		add_str(e,TMPS);
 		return ;
 	}
-	str = ft_itoa_base(value,16);
-	ft_strtolower(str);
-	final = ft_strjoin("0x", str);
-	add_str(e,final);
-	free(str);
+	TMPS = ft_itoa_base(value,16);
+	ft_strtolower(TMPS);
+	TMPS = ft_str_join_free("0x",TMPS, 2);
+	add_str(e,TMPS);
 }

@@ -14,7 +14,7 @@ void apply_int(E)
 	if (value < 0)
 		e->dec_is_neg = 1;
 	TMPS = ft_itoa(value);
+	apply_precision(e);
 	apply_width_dec(e);
-	
 	add_str(e,TMPS);
 }

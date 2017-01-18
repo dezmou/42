@@ -4,7 +4,7 @@ static char  *get_prefix(E)
 {
 	char *final;
 
-	if (e->specifier == 'o')
+	if (e->specifier == 'o' || e->specifier == 'O')
 		return (ft_strdup("0"));
 	else
 	{
@@ -14,10 +14,21 @@ static char  *get_prefix(E)
 	return (final);
 }
 
+static void apply_hex_zero_octal(E,char *prefix)
+{
+	if (e->finalwidth >= 1)
+		TMPS[0] = prefix[0];
+	else
+		TMPS = ft_str_join_free("0", TMPS, 2);
+}
+
 static void apply_hex_zero(E,char *prefix)
 {
-	get_more_width(e);
-	apply_width(e);
+	if (e->specifier == 'o' || e->specifier == 'O')
+	{
+		apply_hex_zero_octal(e, prefix);
+		return ;
+	}
 	if (e->finalwidth >= 2)
 	{
 		TMPS[0] = prefix[0];
@@ -40,10 +51,16 @@ static void apply_hex_zero(E,char *prefix)
 	}
 }
 
+
+
+
+
+
 void apply_hex_final(E)
 {
 	char *tmp;
 
+	apply_precision(e);
 	tmp = get_prefix(e);
 	if (e->fl_neg != 0)
 		e->fl_zero = ' ';
@@ -55,7 +72,11 @@ void apply_hex_final(E)
 			apply_width(e);
 		}
 		else
+		{
+			get_more_width(e);
+			apply_width(e);
 			apply_hex_zero(e,tmp);
+		}
 	}
 	else
 		apply_width(e);

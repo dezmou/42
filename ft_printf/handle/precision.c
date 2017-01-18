@@ -8,6 +8,7 @@ void handle_precision(E)
 	i = 0;
 	if (CHAR == '.')
 	{
+		e->precision = 0;
 		NBRC++;
 		if (CHAR == '*')
 			e->precision = va_arg(ARGS, int);

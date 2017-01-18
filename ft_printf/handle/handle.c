@@ -23,6 +23,7 @@ void handle_percent(E)
 	NBRC += 1;
 	handle(e);
 }
+
 void show_params(E)
 {
 	printf("##############\nis flagged: %d\n\n", e->is_flagged);

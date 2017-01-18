@@ -26,12 +26,12 @@ int ft_printf(const char *restrict format, ...)
 	destroy_env(&e);
 	return (e.nbrread);
 }
-/*
+
 void testit()
 {
 	int reel ;
 	int ft ;
-	int pointer;
+	int pointer ;
 	ft_putstr("\n\n#############################################################\n\n");
 	ft_putstr("ft_printf  :-->");
 	ft = ft_printf(TEST);
@@ -51,5 +51,3 @@ int main(void)
 	//printf("%s", (wchar_t*)("bonjour"));
 	return (0);
 }
-
-*/

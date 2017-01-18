@@ -12,6 +12,7 @@ void apply_long(E)
 		e->fl_zero = ' ';
 	if (value < 0)
 		e->dec_is_neg = 1;
+	apply_precision(e);
 	apply_width_dec(e);
 	add_str(e,TMPS);
 }

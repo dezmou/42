@@ -32,7 +32,7 @@ SRC_NAME			= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 					ft_range.c ft_new_matrix.c ft_del_matrix.c ft_cpy_matrix.c \
 					ft_set_mat_elem.c ft_get_mat_elem.c ft_transpose_mat.c \
 					ft_sum_mat.c ft_mult_mat.c ft_itoa_base.c \
-					ft_strtolower.c
+					ft_strtolower.c  ft_itoa_u.c
 
 OBJ_PATH			= .
 OBJ_NAME			= $(SRC_NAME:.c=.o)
