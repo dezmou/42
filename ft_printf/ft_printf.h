@@ -1,16 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/23 03:50:54 by momartin          #+#    #+#             */
+/*   Updated: 2017/01/23 03:50:55 by momartin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include "libft/libft.h"
-#include <math.h>
-#include <string.h>
-#include <limits.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <stdarg.h>
+# include "libft/libft.h"
+# include <math.h>
+# include <string.h>
+# include <limits.h>
+# include <wchar.h>
+# include <locale.h>
 
-# define E t_env *e
 # define ARGS e->args
 # define STR e->str
 # define CHAR e->str[e->char_rendu]
@@ -19,102 +32,77 @@
 # define PSTR(x) ft_putstr(x)
 # define TMPS e->tmpstr
 # define SPEC e->specifier
+# define LEN e->length
+# define VALID "dsSDpDiUoOuUxXcC%"
 
-# define TEST "%s %s %s", "this", "is", "a"
-
-# define VALID "dsDpDioOuUxXcCfn%"
-
-//s S p d D i o O u U x X c C
-//hh h l ll j z
-
-typedef struct	s_env
+typedef struct		s_env
 {
-	int 		nbrread;
-	va_list 	args;
-	char 		*str;
-	int 		char_rendu;
-	int 		list_rendu;
-	void 		*tab_spec[256];
-	char 		*tmpstr;
-/*#####ALL INFOS ABOUT %VAR ######*/
+	int				nbrread;
+	va_list			args;
+	char			*str;
+	int				char_rendu;
+	int				list_rendu;
+	void			*tab_spec[256];
+	char			*tmpstr;
+	char			*finalstr;
+	char			is_flagged;
+	char			fl_neg;
+	char			fl_pos;
+	char			fl_space;
+	char			fl_hash;
+	char			fl_zero;
+	char			bigx;
+	int				width;
+	int				finalwidth;
+	int				precision;
+	int				final_prec;
+	char			length;
+	char			specifier;
+	long			dec_value;
+	char			dec_is_neg;
+}					t_env;
 
-	char 		*finalstr;
-	char 		is_flagged;
-	char 		fl_neg;
-	char 		fl_pos;
-	char 		fl_space;
-	char 		fl_hash;
-	char 		fl_zero;
-	char 		bigx;
+void				init_env(t_env *e);
+void				destroy_env(t_env *e);
+int					ft_abs(int n);
+int					ft_printf(const char *restrict format, ...);
+void				add_char(t_env *e, char c);
+void				add_str(t_env *e, char *str);
+void				add_wchar(t_env *e, wchar_t c);
+void				add_wstr(t_env *e, wchar_t *str);
+void				handle_percent(t_env *e);
+void				handle(t_env *e);
+void				handle_flags(t_env *e);
+void				handle_width(t_env *e);
+void				handle_precision(t_env *e);
+void				handle_length(t_env *e);
+void				handle_specifier(t_env *e);
+void				get_more_width(t_env *e);
+void				get_more_prec(t_env *e);
+void				apply(t_env *e);
+void				apply_int(t_env *e);
+void				apply_str(t_env *e);
+void				apply_ptr(t_env *e);
+void				apply_char(t_env *e);
+void				apply_unsigned(t_env *e);
+void				apply_hex_big(t_env *e);
+void				apply_hex_short(t_env *e);
+void				apply_octal(t_env *e);
+void				apply_percent(t_env *e);
+void				apply_wstr(t_env *e);
+void				apply_hex_zero_octal(t_env *e, char *prefix);
+void				apply_width(t_env *e);
+void				apply_width_dec(t_env *e);
+void				apply_precision(t_env *e);
+void				apply_precision_str(t_env *e);
+void				apply_width_wstr(t_env *e, wchar_t *str);
+void				apply_hex_final(t_env *e);
+void				apply_length(t_env *e);
+void				apply_wchar(t_env *e);
+void				apply_invalid(t_env *e);
+void				apply_wstr(t_env *e);
+long				get_nbr_with_len(t_env *e);
+long				get_u_nbr_with_len(t_env *e);
+wchar_t				*ft_cut_wchar(wchar_t *str, int n);
 
-
-	int 		width;
-	int 		finalwidth;
-	int 		precision;
-	int 		final_prec;
-
-	char 		length;
-	char 		specifier;
-	long		dec_value;
-
-	char 		dec_is_neg;
-
-}				t_env;
-
-void init_env(E);
-void destroy_env(E);
-
-
-int ft_printf(const char *restrict format, ...);
-void add_char(E,char c);
-void add_str(E,char *str);
-
-void handle_percent(E);
-void handle(E);
-void handle_flags(E);
-void handle_width(E);
-void handle_precision(E);
-void handle_length(E);
-void handle_specifier(E);
-
-void get_more_width(E);
-void get_more_prec(E);
-
-void apply(E);
-void apply_int(E);
-void apply_str(E);
-void apply_ptr(E);
-void apply_long(E);
-void apply_char(E);
-void apply_unsigned(E);
-void apply_hex_big(E);
-void apply_hex_short(E);
-void apply_octal(E);
-void apply_float(E);
-void apply_percent(E);
-void apply_unsigned_long(E);
-
-void show_params(E);
-
-void apply_width(E);
-void apply_width_dec(E);
-void apply_precision(E);
-void apply_precision_str(E);
-void apply_hex_final(E);
-
-
-void apply_invalid(E);
 #endif
-
-
-/*
-length:
-1 : hh
-2 : h
-3 : l
-4 : ll
-5: L
-6 : z
-7 : j
-8 ; t
-*/

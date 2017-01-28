@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <string.h>
 # include <stdint.h>
+# include <wchar.h>
+
 typedef struct		s_list
 {
 	void			*content;
@@ -79,7 +81,7 @@ int					ft_get_mat_elem(t_matrix *m, unsigned int row,
 int					ft_transpose_mat(t_matrix *m_out, t_matrix *m_in);
 int					ft_sum_mat(t_matrix *m_out, t_matrix *m1, t_matrix *m2);
 int					ft_mult_mat(t_matrix *m_out, t_matrix *m1, t_matrix *m2);
-char				*ft_itoa(intmax_t n);
+char				*ft_itoa(long n);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strnew(size_t size);
@@ -102,8 +104,13 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_matrix			*ft_new_matrix(unsigned int rows, unsigned int cols);
 t_matrix			*ft_cpy_matrix(t_matrix *m);
 
-char				*ft_itoa_base(uintmax_t number, int base);
+char				*ft_itoa_base_u(uintmax_t number, int base);
+char				*ft_itoa_base(intmax_t number, int base);
 void				ft_strtolower(char *str);
 char				*ft_str_join_free(char *str1, char *str2, char nbr);
-char 				*ft_itoa_u(unsigned long n);
+char				*ft_itoa_u(unsigned long n);
+int					ft_putwchar(wchar_t c);
+int					ft_wcharlen(wchar_t c);
+int					ft_wstrlen(wchar_t *str);
+int					ft_wstr_false_len(wchar_t *str);
 #endif
