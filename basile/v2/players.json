@@ -1,0 +1,12 @@
+{
+	"players" :[
+		{
+			"mail" : "basile.beldame@supdeweb-paris.com",
+			"mdp" : "basile1996",
+			"skill" : 85,
+			"offer" : 1,
+			"ended" : 0,
+			"active" : 0
+		}
+	]
+}

@@ -1,0 +1,21 @@
+[INFO  - 2017-03-20T03:20:56.677Z] GhostDriver - Main - running on port 51127
+[INFO  - 2017-03-20T03:20:57.188Z] Session [3bd04600-0d1c-11e7-acc3-6f31c6ad54e5] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-03-20T03:20:57.188Z] Session [3bd04600-0d1c-11e7-acc3-6f31c6ad54e5] - page.customHeaders:  - {}
+[INFO  - 2017-03-20T03:20:57.188Z] Session [3bd04600-0d1c-11e7-acc3-6f31c6ad54e5] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-10.11 (El Capitan)-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-03-20T03:20:57.188Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 3bd04600-0d1c-11e7-acc3-6f31c6ad54e5
+[ERROR - 2017-03-20T03:20:59.609Z] Session [3bd04600-0d1c-11e7-acc3-6f31c6ad54e5] - page.onError - msg: SyntaxError: Invalid character '\u0001'
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-03-20T03:20:59.609Z] Session [3bd04600-0d1c-11e7-acc3-6f31c6ad54e5] - page.onError - stack:
+  sendEvent (https://secure.adnxs.com/getuid?https%3A%2F%2Fwww.linkedin.com%2Fcsp%2Fdtag%3Fp%3D9%26_x%3D%252526opid%25253D32814%252526fmt%25253Djs%252526url%25253Dhttps%2525253A%2525252F%2525252Fglobal-exam.com%2525252Ffr%2525252Flogin%252526ref%25253Dhttps%2525253A%2525252F%2525252Fglobal-exam.com%2525252Ffr%252526s%25253D1%252526pageUrl%25253Dhttps%2525253A%2525252F%2525252Fglobal-exam.com%2525252Ffr%2525252Flogin%252526time%25253D1489980059535%2525263pc%25253Dtrue%252526an_user_id%25253D%24UID:1)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error

@@ -6,7 +6,7 @@
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 19:59:46 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 19:59:48 by momartin         ###   ########.fr       */
+/*   Updated: 2017/01/28 17:57:36 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 
-# define PRINT 0
+# define PRINT 1
 # define LINE e->line
 # define NBPL e->nbrplayer
 # define WIDTH e->width

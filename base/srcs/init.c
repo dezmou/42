@@ -12,16 +12,10 @@
 
 #include "#projet#.h"
 
-void destroy_env(E)
-{
-	free(e);
-}
 
-t_env *init_env(void)
+t_env init_env(void)
 {
-	t_env *e;
-	if(!(e = (t_env*)malloc(sizeof(t_env))))
-		exit(0);
+	t_env e
 
 	return (e);
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fract.h"
+#include "wolf.h"
 
 t_img		*init_img(int w, int h)
 {
@@ -54,26 +54,26 @@ void		img_reset_tab(t_img *img)
 	}
 }
 
-void		img_pack(t_env *e)
+void		img_pack(t_env *e, void *win ,t_img *img,)
 {
 	int x;
 	int y;
 
 	mlx_destroy_image(e->mlx, IMG->ptr);
-	IMG->ptr = mlx_new_image(e->mlx, WIDTH, HEIGHT);
-	IMG->data = mlx_get_data_addr(IMG->ptr, &(IMG->bpp), &(IMG->size),
-		&(IMG->endian));
+	img->ptr = mlx_new_image(e->mlx, WIDTH, HEIGHT);
+	img->data = mlx_get_data_addr(img->ptr, &(img->bpp), &(img->size),
+		&(img->endian));
 	y = -1;
-	while (++y < IMG->h)
+	while (++y < img->h)
 	{
 		x = -1;
-		while (++x < IMG->w)
+		while (++x < img->w)
 		{
-			if (IMG->tab[y][x])
-				put_pixel_img(IMG, x, y, IMG->tab[y][x]);
+			if (img->tab[y][x])
+				put_pixel_img(img, x, y, img->tab[y][x]);
 		}
 	}
-	mlx_put_image_to_window(e->mlx, e->win, IMG->ptr, 0, 0);
+	mlx_put_image_to_window(e->mlx, win, img->ptr, 0, 0);
 }
 
 void		put_pixel_img(t_img *img, int x, int y, int color)
