@@ -2,6 +2,8 @@ import struct
 import operator
 import sys, getopt
 import Quartz.CoreGraphics as CG
+import pygame
+from pygame.locals import *
 from Quartz.CoreGraphics import CGEventCreateMouseEvent
 from Quartz.CoreGraphics import CGEventPost
 from Quartz.CoreGraphics import kCGEventMouseMoved
@@ -12,6 +14,25 @@ from Quartz.CoreGraphics import kCGMouseButtonLeft
 from Quartz.CoreGraphics import kCGHIDEventTap
 import json
 from time import sleep
+import pyautogui
+pygame.init()
+
+
+
+
+fen = pygame.display.set_mode((800,500))
+
+fond = pygame.image.load("fond.png").convert()
+ic1 = pygame.image.load("1.png").convert()
+ic3 = pygame.image.load("3.png").convert()
+ic4 = pygame.image.load("4.png").convert()
+ic5 = pygame.image.load("5.png").convert()
+ic6 = pygame.image.load("6.png").convert()
+ic7 = pygame.image.load("7.png").convert()
+
+
+fen.blit(fond, (0,0))
+
 
 
 def mouseEvent(type, posx, posy):
@@ -33,7 +54,8 @@ def mouseclick(posx,posy):
         sleep(0.1)
         mouseEvent(kCGEventLeftMouseUp, posx,posy);
         mouseEvent(kCGEventLeftMouseUp, posx,posy);
-        mouseEvent(kCGEventLeftMouseUp, posx,posy);
+       	mouseEvent(kCGEventLeftMouseUp, posx,posy);
+
 
 class ScreenPixel(object):
 
@@ -69,8 +91,9 @@ class Tracker:
 		self.t = ScreenPixel()
 		self.get_table_pos()
 		self.play()
-	
+		pass
 	def click_card(self,x,y):
+		
 		x += -1
 		y += -1
 		x = x * 32 + 123
@@ -79,32 +102,54 @@ class Tracker:
 		sleep(0.2)
 		mouseclick(x + self.table_pos[0], y + self.table_pos[1])
 		sleep(0.2)
-		mouseclick(2312, 30)
 
 	def take_or_not(self):
-		res = raw_input("take ? [y-n] $>")
+		#res = raw_input("take ? [y-n] $>")
+		while True:
+			ev = pygame.event.wait()
+			if ev.type == 6:
+				if ev.button == 2:
+					res = "y"
+					break
+				if ev.button == 3:
+					res = "n"
+					break
+		pos = pyautogui.position()
 		if res == "y":
 			mouseclick(688, 37)
 			sleep(0.2)
 			mouseclick(self.table_pos[0] +54, self.table_pos[1] + 185)
 			sleep(0.2)
-			mouseclick(2312, 30)
+			#mouseclick(2312, 30)
+			pyautogui.click(x=pos[0], y=pos[1])
 			return True
 		else:
 			mouseclick(688, 37)
 			sleep(0.2)
 			mouseclick(self.table_pos[0] + 647, self.table_pos[1] + 216)
 			sleep(0.2)
-			mouseclick(2312, 30)
+			#mouseclick(2312, 30)
+			pyautogui.click(x=pos[0], y=pos[1])
 			return False
 
 	def action(self):
-		move = raw_input("your move [x y] $>")
-		move = move.replace("j", "11").replace("q", "12").replace("k", "13").replace("t", "10")
-		move = move.replace("J", "11").replace("Q", "12").replace("K", "13").replace("T", "10")
-		move = move.split(" ")
-		self.click_card(int(move[0]), int(move[1]))
-		return move
+		#move = raw_input("your move [x y] $>")
+		#move = move.replace("j", "11").replace("q", "12").replace("k", "13").replace("t", "10")
+		#move = move.replace("J", "11").replace("Q", "12").replace("K", "13").replace("T", "10")
+		#move = move.split(" ")
+		while True:
+			ev = pygame.event.wait()
+			if ev.type == 6:
+				if ev.button == 1:
+					x = ev.pos[0]
+					y = ev.pos[1]
+					break		
+		x = x / 60 + 1
+		y = y / 125 + 1
+		pos = pyautogui.position()
+		self.click_card(x, y)
+		pyautogui.click(x=pos[0], y=pos[1])
+		return [str(x), str(y)]
 
 	def get_which_new_cards(self, anc):
 		for y in range(4):
@@ -120,6 +165,7 @@ class Tracker:
 			actc =  self.get_card()
 			self.cards[actc[1]][actc[0]-1] = 3
 			self.printit()
+			self.maj_gui()
 			if not self.take_or_not():
 				self.lost_cards.append(actc)
 			else:
@@ -129,6 +175,7 @@ class Tracker:
 			self.get_which_new_cards(anc)
 			self.cards[ self.new[1] ][ self.new[0] ] = 7
 			self.printit()
+			self.maj_gui()
 			self.cards[ self.new[1] ][ self.new[0] ] = 1
 			move = self.action()
 			move[1] = str(int(move[1])-1)
@@ -149,10 +196,11 @@ class Tracker:
 				self.ref_cards_b.append(json.loads(f.read()))
 
 	def find_color(self, r,g,b):
-		for y in range(137, 151):
-			for  x in range(25, 36):
+		for y in range(144, 151):
+			for  x in range(26, 36):
 				px = self.get_pixel(x, y)
 				if px == (40, 120, 64):
+					print "ok"
 					return (x,y)
 	
 	def get_pixel(self,x,y):
@@ -188,6 +236,24 @@ class Tracker:
 			self.cards[int(ca[1])][int(ca[0])-1] = 4
 		for ca in self.refused_op_cards:
 			self.cards[int(ca[1])][int(ca[0])-1] = 6
+
+	def maj_gui(self):
+		fen.blit(fond, (0,0))	
+		for y in range(4):
+			for x in range(13):
+				if self.cards[y][x] == 1:
+					fen.blit(ic1, (x * 60 , y * 125 ))
+				elif self.cards[y][x] == 6:
+					fen.blit(ic4, (x * 60 , y * 125 ))
+				elif self.cards[y][x] == 3:
+					fen.blit(ic3, (x * 60 , y * 125 ))
+				elif self.cards[y][x] == 4:
+					fen.blit(ic6, (x * 60 , y * 125 ))
+				elif self.cards[y][x] == 5:
+					fen.blit(ic5, (x * 60 , y * 125 ))
+				elif self.cards[y][x] == 7:
+					fen.blit(ic7, (x * 60 , y * 125 ))
+		pygame.display.flip()
 
 	def printit(self):
 		final = '\033[0m'
