@@ -29,8 +29,8 @@ ic4 = pygame.image.load("4.png").convert()
 ic5 = pygame.image.load("5.png").convert()
 ic6 = pygame.image.load("6.png").convert()
 ic7 = pygame.image.load("7.png").convert()
-
-
+front = pygame.image.load("back.png").convert_alpha()
+neutral = pygame.image.load("neutral.png").convert()
 fen.blit(fond, (0,0))
 
 
@@ -144,6 +144,7 @@ class Tracker:
 					x = ev.pos[0]
 					y = ev.pos[1]
 					break		
+		
 		x = x / 60 + 1
 		y = y / 125 + 1
 		pos = pyautogui.position()
@@ -178,6 +179,9 @@ class Tracker:
 			self.maj_gui()
 			self.cards[ self.new[1] ][ self.new[0] ] = 1
 			move = self.action()
+			self.cards[int(move[1]) - 1][int(move[0]) - 1] = 4
+			self.printit()
+			self.maj_gui()
 			move[1] = str(int(move[1])-1)
 			res = self.op_loop()
 			if res:
@@ -196,8 +200,8 @@ class Tracker:
 				self.ref_cards_b.append(json.loads(f.read()))
 
 	def find_color(self, r,g,b):
-		for y in range(144, 151):
-			for  x in range(26, 36):
+		for y in range(142, 151):
+			for  x in range(22, 36):
 				px = self.get_pixel(x, y)
 				if px == (40, 120, 64):
 					print "ok"
@@ -232,10 +236,11 @@ class Tracker:
 			self.cards.append(zouze)
 		for ca in self.op_cards:
 			self.cards[int(ca[1])][int(ca[0])-1] = 5
-		for ca in self.lost_cards:
-			self.cards[int(ca[1])][int(ca[0])-1] = 4
 		for ca in self.refused_op_cards:
 			self.cards[int(ca[1])][int(ca[0])-1] = 6
+		for ca in self.lost_cards:
+			self.cards[int(ca[1])][int(ca[0])-1] = 4
+
 
 	def maj_gui(self):
 		fen.blit(fond, (0,0))	
@@ -253,6 +258,11 @@ class Tracker:
 					fen.blit(ic5, (x * 60 , y * 125 ))
 				elif self.cards[y][x] == 7:
 					fen.blit(ic7, (x * 60 , y * 125 ))
+		fen.blit(front,(0,0))
+		for y in range(4):
+			for x in range(13):
+				if self.cards[y][x] == 2:
+					fen.blit(neutral, (x * 60, y * 125))
 		pygame.display.flip()
 
 	def printit(self):
