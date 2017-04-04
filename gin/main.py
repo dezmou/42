@@ -200,8 +200,8 @@ class Tracker:
 				self.ref_cards_b.append(json.loads(f.read()))
 
 	def find_color(self, r,g,b):
-		for y in range(142, 151):
-			for  x in range(22, 36):
+		for y in range(153, 160):
+			for  x in range(19, 36):
 				px = self.get_pixel(x, y)
 				if px == (40, 120, 64):
 					print "ok"

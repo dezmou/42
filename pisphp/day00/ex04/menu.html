@@ -1,0 +1,132 @@
+<html>
+<head>
+<style>
+#menu { 
+	width: 150px; 
+-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+
+} 
+
+#menu ul { 
+	padding: 0; 
+	width: 150px; 
+	border:1px solid; 
+ 	margin:0px; 
+ 	background-color: #fefefe;
+} 
+
+#menu ul li { 
+	position:relative; 
+	list-style: none; 
+	border-bottom:1px solid; 
+
+} 
+
+#menu ul ul { 
+	position: absolute; 
+	top: 0; 
+	left: 150px;
+-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}   
+
+#menu li a { 
+	text-decoration: none; 
+}
+#menu li.sousmenu { 
+ 	 background: yellow; 
+}
+body { 
+	background-image: url("https://static.pratique.fr/images/unsized/sn/sncf-gare-paris-nord.jpg");
+} 
+
+#menu ul ul { 
+	position: absolute; 
+	top: 0; 
+	left: 150px; 
+	display:none
+} 
+
+#menu ul.niveau1 li.sousmenu:hover ul.niveau2, 
+#menu ul.niveau2 li.sousmenu:hover ul.niveau3 { 
+	display:block; 
+}
+#menu a { 
+	color:#000000 
+} 
+
+#menu li:hover { 
+	background: #EDD 
+} 
+
+#menu li.sousmenu:hover { 
+	background: #EBB; 
+} 
+
+#menu li.sousmenu { 
+	background-color: #dadada;
+} 
+
+#menu li a { 
+	text-decoration: none;
+	padding: 4px 0 4px 8px; 
+	display:block; 
+	border-left: 8px solid #BBB; width:84px 
+} 
+
+#menu li a:hover { 
+	border-left-color: red; 
+} 
+#menu ul ul li a:hover { 
+	border-left-color: #00FF00; 
+} 
+#menu ul ul ul li a:hover { 
+	border-left-color: #0000FF; 
+}
+#side{
+	margin-left: 200px;
+	margin-top: 90px;
+	background-image: url("https://cdn.pixabay.com/photo/2015/09/14/11/43/restaurant-939435_960_720.jpg");
+	background-size: 100%;
+	width: 457px;
+	height: 224px;
+	-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+</style>
+</head>
+<body>
+<div id="side">
+
+	<div id="menu"> 
+		<ul class="niveau1"> 
+	  		<li><a href="">Blanquette</a></li> 
+	  		<li class="sousmenu"><a href="">Chinois</a> 
+				<ul class="niveau2"> 
+					<li><a href="">Chat rotis</a></li> 
+					<li><a href="">Chien en sauce</a></li> 
+	 			</ul> 
+	  		</li> 
+	  		<li><a href="menu 3">Salade</a></li> 
+	  		<li class="sousmenu"><a href="">Snacks</a> 
+	 			<ul class="niveau2"> 
+					<li class="sousmenu"><a href="">Sandwichs</a> 
+	   					<ul class="niveau3"> 
+	  						<li><a href="">Americain Thon</a></li> 
+	  						<li><a href="">Americain Jambon</a></li> 
+	  						<li><a href="">Americain Thon</a></li> 
+	   					</ul> 
+					</li> 
+					<li><a href="">Burger</a></li> 
+	 			</ul> 
+	  		</li> 
+	   </ul> 
+	</div>
+</div>
+
+</body>
+</html>

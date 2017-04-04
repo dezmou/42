@@ -1,0 +1,53 @@
+body{
+			background-image: url("http://www.cmaisonneuve.qc.ca/wp-content/uploads/2014/12/photo_lab_chimie_1.jpg");
+		}
+		td{
+			width: 5%;
+			background-color: #13f0fb;
+			font-size: 1vw;
+			border: 1px solid black;
+			border-radius: 7px 3px 7px 3px;
+			-moz-border-radius: 7px 15px 7px 3px;
+			-webkit-border-radius: 7px 3px 7px 3px;
+			border: 1px solid #000000;
+
+		}
+		.num{
+			float: left;
+			padding-left: 2%;
+
+		}
+		.atom{
+			float: right;
+			padding-right : 2%;
+		}
+		.den{
+			font-size: 2vw;
+			margin-top: 20%;
+		}
+		table{
+			width: 95%;
+			margin: auto;
+		}
+		.rien{
+			background: none;
+			border: none;
+		}
+		.violet{
+			background-color: #ba97fa;
+		}
+		.jaune{
+			background-color:  #fffeb6;
+		}
+		.mauve{
+			background-color:  #9459af;
+		}
+		.gris{
+			background-color: grey;
+		}
+		.green{
+			background-color: #a1d29a;
+		}
+		.blue{
+			background-color:  #b2b9ff;
+		}
