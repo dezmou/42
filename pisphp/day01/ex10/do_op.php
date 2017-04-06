@@ -16,8 +16,19 @@
 		print_r($argv[1]-$argv[3]."\n");
 	if ($argv[2] == "*")
 		print_r($argv[1]*$argv[3]."\n");
-	if ($argv[2] == "/")
+	if ($argv[2] == "/"){
+		if ($argv[3] == 0){
+			print_r("NON");
+			exit(0);
+		}
 		print_r($argv[1]/$argv[3]."\n");
-	if ($argv[2] == "%")
+	}
+	if ($argv[2] == "%"){
+		if ($argv[3] == 0){
+			print_r("NON");
+			exit(0);
+		}
 		print_r($argv[1]%$argv[3]."\n");
+
+	}
 ?>

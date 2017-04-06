@@ -24,7 +24,7 @@ function one_more_time($ar){
 		omt_error();
 	foreach ($sp as $key => $value) {
 		if ($key == 0){
-			if (preg_match("#^[Ll]undi$|^[Mm]ardi$|^[Mm]ercredi$|^[Jj]eudi$|^[Vv]endredi$|^[Ss]amedi$|^[Dd]imanche$#", $value) == 0 ){
+			if (preg_match("#^[Ll]undi$|^[Mm]ardi$|^[Mm]ercredi$|^[Jj]eudi$|^[Vv]endredi$|^[Ss]amedi$|^[Dd]imanche$#", $value) === FALSE ){
 				omt_error();
 			}
 		}
@@ -34,7 +34,11 @@ function one_more_time($ar){
 			}
 		}
 		if ($key == 2){
-			if (preg_match("#^[Jj]anvier$|^[Ff][eé]vrier$|^[Mm]ars$|^[Aa]vril$|^[Mm]ai$|^[Jj]uin$|^[Jj]uillet$|^[Aa]o[uû]t$|^[Ss]eptembre$|^[Oo]ctobre$|^[Nn]ovembre$|^[Dd][eé]cembre$#", $value) == 0 ){
+			print_r($value."\n");
+			//if (preg_match("#^[Jj]anvier$|^[Ff][eé]vrier$|^[Mm]ars$|^[Aa]vril$|^[Mm]ai$|^[Jj]uin$|^[Jj]uillet$|^[Aa]o[uû]t$|^[Ss]eptembre$|^[Oo]ctobre$|^[Nn]ovembre$|^[Dd][eé]cembre$#", $value) === FALSE ){
+				//omt_error();
+			//}
+			if (preg_match("#^(.* |)([Jj]anvier|[Ff][eé]vrier|[Mm]ars|[Aa]vril|[Mm]ai|[Jj]uin|[Jj]uillet|[Aa]o[uû]t|[Ss]eptembre|[Oo]ctobre|[Nn]ovembre|[Dd][eé]cembre)( .*|)$#", $value) === FALSE ){
 				omt_error();
 			}
 		}
@@ -132,11 +136,11 @@ function photo($ar){
 	}
 }
 
-who();
+//who();
 //photo($argv);
 //who();
 //loupe($argv);
-//one_more_time($argv);
+one_more_time($argv);
 
 
 

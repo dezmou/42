@@ -3,7 +3,7 @@
 
 function do_op($ac, $ar){
 	if ($ac != 2){
-		print_r("Incorrect Parameters");
+		print_r("Incorrect Parameters\n");
 		exit(0);
 	}
 	$symbs = ["*", "/", "-", "+", "%"];
