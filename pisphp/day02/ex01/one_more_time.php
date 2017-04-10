@@ -44,7 +44,7 @@ function one_more_time($ar){
 			}
 		}
 	}
-	$day =  "16";
+	$day =  $sp[1];
 	$year = $sp[3];
 	$nbrmonth = 1;
 	$month_tab = array(

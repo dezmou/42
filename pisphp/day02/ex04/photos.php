@@ -13,7 +13,7 @@ function photo($ar){
 	$zouze = array();
 	preg_match_all("#<img(.*?)>#s", $content, $zouze);
 	$dir_name = preg_replace("#https?://#", "", $ar[1]);
-	mkdir($dir_name);//SI LE FICHIER EXISTE CA PEUT FOUTRE LA POISSE
+	mkdir($dir_name);
 	foreach ($zouze[1] as $key => $value) {
 		preg_match("#src=\"(.*?)\"#s", $value, $cassoulet);
 		if (!preg_match("#https?://#", $cassoulet[1]))

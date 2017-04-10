@@ -15,7 +15,7 @@ function loupe($ar){
 		},$matches[0]);
 	},$neo);
 
-	print_r($neo."\n");
+	print_r($neo);
 }
 loupe($argv);
 ?>
