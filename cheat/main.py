@@ -2,16 +2,33 @@ import sys
 from os import listdir
 import os
 import shutil
+from time import sleep
+import psutil
 
-source = "/Users/momartin/ref"
-folder = "/tmp"
+source = "/source"
+folder = "/test"
 
-anc = listdir(folder)
 while True:
-	if anc != listdir(folder):
+	anc = listdir(folder)
+	while True:
+		print "cherche nouveau dossier"
+		if anc != listdir(folder):
+			break
+	try:
+		while True:
+			ok = True
+			print "dossier trouve"
+			for proc in psutil.process_iter():
+				if proc.name() == "git":
+					ok = False
+			if ok:
+				break
+		print "git finis"
+		neo = set(anc).symmetric_difference(listdir(folder))
+		for root, dirs, files in os.walk(source):
+		   for file in files:
+			  path_file = os.path.join(root,file)
+			  shutil.copy2(path_file,folder+"/"+list(neo)[0])
 		break
-neo = set(anc).symmetric_difference(listdir(folder))
-for root, dirs, files in os.walk(source):
-   for file in files:
-	  path_file = os.path.join(root,file)
-	  shutil.copy2(path_file,folder+"/"+list(neo)[0])
+	except:
+		continue
