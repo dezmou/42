@@ -1,6 +1,7 @@
 # Anti-deadline script by momartin
 # Ce script existe pour sensibiliser les etudiants a la facilite de tricherie en correction .
 
+# faites un "pip install --user psutil"
 # lancez "python lescript.py &"
 # le script va attendre qu'un git clone se produise dans le dossier folder
 # et remplacer le contenus du clone par le dossier source
