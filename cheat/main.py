@@ -1,5 +1,6 @@
 # Anti-deadline script by momartin
 # Ce script existe pour sensibiliser les etudiants a la facilite de tricherie en correction .
+# besoin de faire des modification dans un projet qui est deja set-as-finish ?
 
 # faites un "pip install --user psutil"
 # lancez "python lescript.py &"
