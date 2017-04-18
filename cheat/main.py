@@ -7,7 +7,7 @@
 # le script va attendre qu'un git clone se produise dans le dossier folder
 # et remplacer le contenus du clone par le dossier source
 # votre correcteur n'y vera que du feu surtout si votre dossier source contient un .git valide
-# reglez juste ces deux variable:
+# reglez juste ces deux variables:
 
 source = "/Users/momartin/ref" #la ou se trouve vos fichier
 folder = "/tmp" #la ou le correcteur va git clone
