@@ -38,3 +38,7 @@ while True:
 	except:
 		print "issue"
 		continue
+<<<<<<< HEAD
+=======
+
+>>>>>>> d2e69ee1ab79105072430bed542d9c7c7b60ddda
