@@ -1,6 +1,5 @@
-# Anti deadline script by momartin
-# Ce script existe pour sensibiliser les etudiants a la facilite de tricherie
-# en correction .
+# Anti-deadline script by momartin
+# Ce script existe pour sensibiliser les etudiants a la facilite de tricherie en correction .
 
 # lancez "python lescript.py &"
 # le script va attendre qu'un git clone se produise dans le dossier folder
@@ -17,7 +16,6 @@ import os
 import shutil
 from time import sleep
 import psutil
-
 
 while True:
 	anc = listdir(folder)
@@ -36,9 +34,4 @@ while True:
 		os.system("rm -rf "+folder+"/"+list(neo)[0] + " > /dev/null")
 		os.system("cp -R "+source+" "+folder+"/"+list(neo)[0] + " > /dev/null")
 	except:
-		print "issue"
 		continue
-<<<<<<< HEAD
-=======
-
->>>>>>> d2e69ee1ab79105072430bed542d9c7c7b60ddda
