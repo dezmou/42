@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/14 04:01:17 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/14 04:03:40 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+size_t	ft_lstlen(t_list *lst)
 {
+	t_list *tmp;
+	size_t len;
 
-
+	len = 0;
+	if (lst)
+	{
+		tmp = lst;
+		while (tmp)
+		{
+			len++;
+			tmp = tmp->next;
+		}
+	}
+	return (len);
 }

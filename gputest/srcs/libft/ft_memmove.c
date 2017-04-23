@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/07 10:44:17 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/07 13:38:09 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
+#include <stdlib.h>
 
-
-void init_env(t_env *e)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-
-
+	if (dst < src)
+		ft_memcpy(dst, src, n);
+	if (dst > src)
+		ft_memcpy_bck(dst, src, n);
+	return (dst);
 }

@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/14 03:39:16 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/14 04:28:24 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-
-
+	if (lst)
+	{
+		while (lst)
+		{
+			f(lst);
+			lst = lst->next;
+		}
+	}
 }

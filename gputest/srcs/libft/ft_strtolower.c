@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_strtolower.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2017/01/23 04:12:27 by momartin          #+#    #+#             */
+/*   Updated: 2017/01/23 04:12:28 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+void	ft_strtolower(char *str)
 {
-
-
+	while (*str)
+	{
+		*str = ft_tolower(*str);
+		str++;
+	}
 }

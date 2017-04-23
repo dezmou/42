@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/06 12:32:45 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/06 12:34:25 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+void	ft_putendl_fd(char const *s, int fd)
 {
-
-
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

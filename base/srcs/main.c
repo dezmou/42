@@ -16,7 +16,7 @@ int main(void)
 {
 	t_env e;
 
-	e = init_env();
+	init_env(&e);
 
 	return (0);
 }

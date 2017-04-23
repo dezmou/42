@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/13 05:03:14 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/13 05:13:51 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+char	*ft_strrchr(const char *s, int c)
 {
+	char *d;
 
-
+	d = (char *)s;
+	while (*d)
+		d++;
+	while (*d != c)
+	{
+		if (d == s && *d != c)
+			return (NULL);
+		d--;
+	}
+	return (d);
 }

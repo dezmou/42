@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/05 06:56:29 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/07 15:29:53 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+int		ft_strcmp(char const *s1, char const *s2)
 {
+	size_t i;
 
-
+	i = 0;
+	while ((s1[i] == s2[i]) && (s1[i] && s2[i]))
+		i++;
+	if (s1[i] < 0)
+		return (s2[i] - s1[i]);
+	else
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

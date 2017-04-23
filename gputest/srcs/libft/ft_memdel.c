@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/06 07:56:31 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/06 11:59:52 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include <stdlib.h>
+#include "libft.h"
 
-
-void init_env(t_env *e)
+void	ft_memdel(void **ap)
 {
-
-
+	if (!&*ap)
+		return ;
+	if (*ap && ap)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/05 06:57:14 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/07 16:47:17 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+char	*ft_strncpy(char *s1, char const *s2, size_t n)
 {
+	size_t i_s2;
 
-
+	i_s2 = ft_strlen(s2);
+	if (n)
+		ft_memcpy(s1, s2, n);
+	if (n > i_s2)
+	{
+		while (i_s2 < n)
+		{
+			s1[i_s2] = '\0';
+			i_s2++;
+		}
+	}
+	return (s1);
 }

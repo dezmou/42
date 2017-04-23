@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/07 09:00:31 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/09 10:41:17 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
+	unsigned char *save_dst;
+	unsigned char *save_src;
 
-
+	if (!n)
+		return (NULL);
+	save_dst = (unsigned char *)dst;
+	save_src = (unsigned char *)src;
+	while (n--)
+	{
+		if ((*save_dst++ = *save_src++) == (unsigned char)c)
+			return (save_dst);
+	}
+	return (NULL);
 }

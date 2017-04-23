@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_lstaddend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/12/14 19:32:19 by momartin          #+#    #+#             */
+/*   Updated: 2016/12/14 19:45:32 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+void	ft_lstaddend(t_list **alst, t_list *new)
 {
+	t_list *current;
 
-
+	if (!&*alst || !new)
+		return ;
+	if (*alst && alst)
+	{
+		current = *alst;
+		while (current->next)
+			current = current->next;
+		new->next = NULL;
+		current->next = new;
+	}
+	else
+		*alst = new;
 }

@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_new_matrix.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/15 15:22:47 by momartin          #+#    #+#             */
+/*   Updated: 2016/12/14 22:25:37 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+t_matrix	*ft_new_matrix(unsigned int rows, unsigned int cols)
 {
+	t_matrix	*mat;
 
-
+	mat = (t_matrix*)ft_memalloc(sizeof(t_matrix));
+	mat->rows = rows;
+	mat->cols = cols;
+	mat->data = (float *)ft_memalloc(sizeof(float) * rows * cols);
+	return (mat);
 }

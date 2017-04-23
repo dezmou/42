@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/06 13:03:21 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/06 13:14:04 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
+#include <stdlib.h>
 
-
-void init_env(t_env *e)
+void	ft_strdel(char **as)
 {
-
-
+	if (!&*as)
+		return ;
+	if (*as && as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

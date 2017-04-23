@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 20:10:57 by momartin          #+#    #+#             */
-/*   Updated: 2017/01/11 20:10:59 by momartin         ###   ########.fr       */
+/*   Created: 2016/11/07 15:03:37 by momartin          #+#    #+#             */
+/*   Updated: 2016/11/09 10:42:54 by momartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "#projet#.h"
+#include "libft.h"
 
-
-void init_env(t_env *e)
+char	*ft_strdup(const char *s1)
 {
+	char	*r;
+	int		i;
 
-
+	i = 0;
+	r = (char *)ft_memalloc(sizeof(char) * ft_strlen(s1) + 1);
+	if (!r)
+		return (NULL);
+	while (s1[i])
+	{
+		r[i] = s1[i];
+		i++;
+	}
+	r[i] = '\0';
+	return (r);
 }
