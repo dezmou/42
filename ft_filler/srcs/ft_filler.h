@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 
-# define PRINT 1
+# define PRINT 0
 # define LINE e->line
 # define NBPL e->nbrplayer
 # define WIDTH e->width
