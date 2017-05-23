@@ -38,6 +38,6 @@ re: fclean all
 nolft:
 	$(CC) $(OBJ) -o $(NAME) $(LIBS)
 
-test: $(OBJ)
+test: clean $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) $(LIBS)
 	./gputest

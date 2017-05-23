@@ -6,13 +6,13 @@
 #    By: momartin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/06 20:44:24 by momartin          #+#    #+#              #
-#    Updated: 2017/01/06 20:44:26 by momartin         ###   ########.fr        #
+#    Updated: 2017/05/19 13:07:26 by momartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = wolf3d
 
-CC = gcc -Wall -Wextra -Werror -o2 -flto
+CC = gcc -Wall -Wextra -Werror -o2 -flto 
 
 CFLAGS = -I ./srcs -I ./srcs/libft -flto
 

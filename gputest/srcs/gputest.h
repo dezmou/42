@@ -20,7 +20,7 @@
 #include <OpenCL/opencl.h>
 
 # define CL e->cl
-# define SIZE 640000
+# define SIZE 480000
 
 typedef struct 	s_cl{
 	char 			*source;
@@ -34,7 +34,7 @@ typedef struct 	s_cl{
 	cl_mem 			output;
 	size_t 			local;
 	size_t 			global;
-	float 			data[SIZE];
+	float 			*data;
 	float 			result[SIZE];
 	unsigned int 	count;
 }				t_cl;
